@@ -1,0 +1,9 @@
+[Unit]
+After=network.target
+
+[Service]
+User=palandri
+ExecStart=rclone --vfs-cache-mode writes mount "onedrive": /home/palandri/OneDrive
+
+[Install]
+WantedBy=default.target

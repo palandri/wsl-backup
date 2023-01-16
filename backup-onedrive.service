@@ -1,0 +1,14 @@
+[Unit]
+After=network.target
+
+[Unit]
+Description=backing up projetos to OneDrive
+Wants=backup-onedrive.timer
+
+[Service]
+Type=oneshot
+User=palandri
+ExecStart=bash /home/palandri/bin/rclone-backup.sh
+
+[Install]
+WantedBy=default.target
